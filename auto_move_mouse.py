@@ -34,7 +34,7 @@ class WindowMgr:
 
 
 def main():
-    left,right,top,down=50,1000,50,1000
+    left,right,top,down=50,1920,50,1000
     w = WindowMgr()
     w.find_window_wildcard(".*Google*")
     w.set_foreground()
