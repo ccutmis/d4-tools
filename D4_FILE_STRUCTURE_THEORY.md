@@ -21,7 +21,7 @@ D3 的 討論 :
 * [https://us.forums.blizzard.com/en/d3/t/increased-memory-usage/39946](https://us.forums.blizzard.com/en/d3/t/increased-memory-usage/39946)
 * [https://eu.forums.blizzard.com/en/d3/t/diablo-3-ram-memory-spikes/2895](https://eu.forums.blizzard.com/en/d3/t/diablo-3-ram-memory-spikes/2895)
 
-D3 跟 HOTS 都是地圖固定場景規模不算大的遊戲，D4 要做開放世界自然會遇到更大的挑戰。例如在 D3 或 HOTS 過圖就是換房間重新載入需要的資源，但在 D4 的開放世界裡角色在逛來逛去的同時，它必須同時不斷預載玩家接下來可能需要的資源包，原本有問題的部份就會放大，變成大問題。 (相關細節可以閱讀最下方參考資料)
+D3 跟 HOTS 都是地圖固定場景規模不算大的遊戲，D4 要做開放世界自然會遇到更大的挑戰。例如在 D3 或 HOTS 過圖就是換房間重新載入需要的資源，但在 D4 的開放世界裡角色在逛來逛去的同時，它必須同時不斷預載玩家接下來可能需要的資源包，原本有問題的部份就會放大，變成大問題。 (相關議題可以閱讀最下方參考資料)
 
 想想你在公測時角色走在大地圖上，逛到某些地方會有累似空氣牆，擋住不能過，等一會兒又能過了，推斷這有可能就是程式判斷某些資源還沒處理好，不想讓玩家直接跑過去看到低畫質甚至是空白的場景所做的限制機制。
 
