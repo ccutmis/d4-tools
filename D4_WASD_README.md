@@ -16,14 +16,14 @@
     * D4_WASD.exe (WASD 主程式)
     * d4_wasd_setting.txt (設定檔)
 
-![dist資料夾的內容](https://www.web3d.url.tw/images/d4wasd/1-2.png)
+![dist資料夾的內容](https://www.web3d.url.tw/images/d4wasd/1-2a.png)
 
 -----
 
 ### 2. 執行 WASD MAPPER : 
 1. 雙擊 D4_WASD.exe 執行主程式，出現如下畫面表示 WASD 程式正常執行。
 
-![執行 WASD MAPPER](https://www.web3d.url.tw/images/d4wasd/2-1.png)
+![執行 WASD MAPPER](https://www.web3d.url.tw/images/d4wasd/2-1a.png)
 
 -----
 
