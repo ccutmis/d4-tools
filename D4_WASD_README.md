@@ -12,7 +12,11 @@
 
 ### 1. 下載並安裝 WASD MAPPER : 
 1. 開啟 Google 瀏覽器 在網址列複制貼上 https://www.web3d.url.tw/tmp/d4wasd.zip 開始下載 ( 或直接點[連結](https://www.web3d.url.tw/tmp/d4wasd.zip)下載)
-2. 下載完成將壓縮檔內容(dist資料夾)解壓縮到電腦桌面上，dist資料夾的內容為:
+2. 檔案下載時可能遇到的瀏覽器封鎖解決方法:
+    * Google Chrome: [圖片說明](https://www.web3d.url.tw/images/d4wasd/download_d4wasd_from_chrome.png)
+    * Microsoft Edge: [圖片說明](https://www.web3d.url.tw/images/d4wasd/download_d4wasd_from_edge.png)
+
+3. 下載完成將壓縮檔內容(dist資料夾)解壓縮到電腦桌面上，dist資料夾的內容為:
     * D4_WASD.exe (WASD 主程式)
     * d4_wasd_setting.txt (設定檔)
 
