@@ -1,8 +1,10 @@
-# WASD MAPPER 使用說明
+# D4_WASD 使用說明
+
+![D4_WASD](https://www.web3d.url.tw/images/d4wasd/D4_WASD_LOGO.png)
 
 ## 目錄
-1. 下載並安裝 WASD MAPPER
-2. 執行 WASD MAPPER
+1. 下載並安裝 D4_WASD
+2. 執行 D4_WASD
 3. 常用快捷鍵
 4. 如何修改 設定檔 ( d4_wasd_setting.txt )
 5. 參考資源
@@ -10,7 +12,7 @@
 
 -----
 
-### 1. 下載並安裝 WASD MAPPER : 
+### 1. 下載並安裝 D4_WASD : 
 1. 開啟 Google 瀏覽器 在網址列複制貼上 https://www.web3d.url.tw/tmp/d4wasd.zip 開始下載 ( 或直接點[連結](https://www.web3d.url.tw/tmp/d4wasd.zip)下載)
 2. 檔案下載時可能遇到的瀏覽器封鎖解決方法:
     * Google Chrome: [圖片說明](https://www.web3d.url.tw/images/d4wasd/download_d4wasd_from_chrome.png)
@@ -24,10 +26,10 @@
 
 -----
 
-### 2. 執行 WASD MAPPER : 
+### 2. 執行 D4_WASD : 
 1. 雙擊 D4_WASD.exe 執行主程式，出現如下畫面表示 WASD 程式正常執行。
 
-![執行 WASD MAPPER](https://www.web3d.url.tw/images/d4wasd/2-1a.png)
+![執行 D4_WASD](https://www.web3d.url.tw/images/d4wasd/2-1a.png)
 
 -----
 
@@ -109,8 +111,6 @@ ARROW_KEY_MAP = {
 ### 5. 參考資源
 * [keyboard 模組官方文件](https://github.com/boppreh/keyboard/blob/master/README.md)
 * [YT影片 WASD 的由來 : 第一位電競選手DENNIS FENG](https://www.youtube.com/watch?v=D7PJ7rliYZk)
-* [壹讀: WASD，何時成了遊戲操作的主流？](https://read01.com/a32x86.html#.ZFNaNHZBy3A)
-* [壹讀: PC遊戲鍵位研究：傳統WASD是否最合理](https://read01.com/KB5E4J.html#.ZFNfDHZBy3B)
 
 -----
 
