@@ -65,8 +65,8 @@ ARROW_KEY_MAP = {
 
 # 滑鼠左右鍵的鍵盤映射(MAP)設定
 SKILL_KEY_MAP = {
-    'LM':'v',
-    'RM':'b',
+    'LM':'5',
+    'RM':'space',
     'UNIT_ADD':']',
     'UNIT_SUB':'[',
     'LMRM_SWITCH':'\\',
