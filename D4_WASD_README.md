@@ -29,7 +29,7 @@
 ### 2. 執行 D4_WASD : 
 1. 雙擊 D4_WASD.exe 執行主程式，出現如下畫面表示 WASD 程式正常執行。
 
-![執行 D4_WASD](https://www.web3d.url.tw/images/d4wasd/2-1c.png)
+![執行 D4_WASD](https://www.web3d.url.tw/images/d4wasd/2-1d.png)
 
 -----
 
