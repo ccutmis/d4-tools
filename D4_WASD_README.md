@@ -25,6 +25,7 @@
     * HOTS_wasd_setting.txt (HOTS用範例設定檔)
     * ![dist資料夾的內容](https://www.web3d.url.tw/images/d4wasd/1-2b.png)
 4. D4_WASD.exe 的 MD5 驗證碼:
+    * D4_WASD.exe (VERSION: 0.1B) MD5 驗證碼 : C755E1FFA653188409FA2315B1C66AE6
     * D4_WASD.exe (VERSION: 0.1A) MD5 驗證碼 : 41C2FC73FC8C3A74EAAB1CFA37193746
     * 與 MD5驗證相關的資訊請至下方:"6. 參考資源" 查閱。
     * 主程式版本有更新時 MD5 驗證碼會隨之變更，以本頁公告為準。
