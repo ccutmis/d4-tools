@@ -25,7 +25,7 @@
     * HOTS_wasd_setting.txt (HOTS用範例設定檔)
     * ![dist資料夾的內容](https://www.web3d.url.tw/images/d4wasd/1-2b.png)
 4. D4_WASD.exe 的 MD5 驗證碼:
-    * D4_WASD.exe (VERSION: 0.1B) MD5 驗證碼 : C755E1FFA653188409FA2315B1C66AE6
+    * D4_WASD.exe (VERSION: 0.1B) MD5 驗證碼 : AEA2E56170A9D3599A21A39BB87D16CA
     * D4_WASD.exe (VERSION: 0.1A) MD5 驗證碼 : 41C2FC73FC8C3A74EAAB1CFA37193746
     * 與 MD5驗證相關的資訊請至下方:"6. 參考資源" 查閱。
     * 主程式版本有更新時 MD5 驗證碼會隨之變更，以本頁公告為準。
@@ -35,7 +35,7 @@
 ### 2. 執行 D4_WASD : 
 1. 雙擊 D4_WASD.exe 執行主程式，出現如下畫面表示 WASD 程式正常執行。
 
-![執行 D4_WASD](https://www.web3d.url.tw/images/d4wasd/2-1f.png)
+![執行 D4_WASD](https://www.web3d.url.tw/images/d4wasd/2-1g.png)
 
 -----
 
@@ -46,7 +46,7 @@
 * ＼ : 位移後點"左鍵或右鍵或無動作"的切換，比如預設是 LM ，按一下變成 RM ，再按一下變成 FORCE_MOVE(需設好對應到遊戲內的強制移動按鍵)，再按一下變成 無動作。
 * ＝ : ㊉鎖定中心 切換游標設定 由畫面中心點 或 由游標當前位置 往上下左右位移
 * － : 暫停或啟動
-* 上列的快捷鍵都可以透過修改 設定檔 ( d4_wasd_setting.txt ) 調成你喜歡的快捷鍵。
+* 上列的快捷鍵都可以透過修改 設定檔 ( d4_wasd_setting.txt ) 調成你慣用的快捷鍵。
 * "游標移動後:尚未指派" 搭配  "㊉鎖定中心:False" 就可以用方向鍵控制游標移動而不是控制角色移動。
 * 若要強制結束程式可按住組合鍵: Ctrl + Alt + x (eXit)
 * 程式最小化的組合鍵: Ctrl + Alt + b (Back)
