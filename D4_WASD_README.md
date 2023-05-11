@@ -29,14 +29,14 @@
 ### 2. 執行 D4_WASD : 
 1. 雙擊 D4_WASD.exe 執行主程式，出現如下畫面表示 WASD 程式正常執行。
 
-![執行 D4_WASD](https://www.web3d.url.tw/images/d4wasd/2-1e.png)
+![執行 D4_WASD](https://www.web3d.url.tw/images/d4wasd/2-1f.png)
 
 -----
 
 ### 3. 常用快捷鍵 : 
 * 上下左右 : 控制 游標往上下左右位移一個單位(UNIT)，並點擊滑鼠左鍵或右鍵。
-* 〕 : 增加位移單位。
-* 〔 : 減少位移單位。
+* ] : 增加位移單位。
+* [ : 減少位移單位。
 * ＼ : 位移後點"左鍵或右鍵或無動作"的切換，比如預設是 LM ，按一下變成 RM ，再按一下變成 FORCE_MOVE(需設好對應到遊戲內的強制移動按鍵)，再按一下變成 無動作。
 * ＝ : ㊉鎖定中心 切換游標設定 由畫面中心點 或 由游標當前位置 往上下左右位移
 * － : 暫停或啟動
@@ -50,9 +50,7 @@
 -----
 
 ### 4. 如何修改 設定檔 ( d4_wasd_setting.txt ) :
-d4_wasd_setting.txt 是一個文字檔，你可以使用記事本或任何純文字編輯軟體(例如: Notepad++ 或 visual studio code)開啟它，並依照自己的需求修改設定內容，請注意在修改時只能修改 '值' 不要修改裡面的格式，不清楚的地方不要做任何修改。
-
-下面是 d4_wasd_setting.py 裡面可以修改 '值' 的部份:
+d4_wasd_setting.txt 是一個文字檔，你可以使用記事本或任何純文字編輯軟體(例如: Notepad++ 或 visual studio code)開啟它，並依照自己的需求修改設定內容，請注意在修改時只能修改 '值' 不要修改裡面的格式，不清楚的地方不要做任何修改。修改完成後記得要存檔再重開 D4_WASD.exe 新的設定才會有作用。
 
 ```
 # 井字符號之後的所有文字為註解，程式運作時不會執行
@@ -68,20 +66,20 @@ ARROW_KEY_MAP = {
     'right':'right'
 }
 
-# 滑鼠左右鍵的鍵盤映射(MAP)設定
+# 滑鼠左右鍵及快捷鍵的鍵盤映射(MAP)設定
 SKILL_KEY_MAP = {
     'LM':'5',
     'RM':'space',
     'FORCE_MOVE':'9',
     'UNIT_ADD':']',
     'UNIT_SUB':'[',
-    'LMRM_SWITCH':'\\',
+    'AAM_SWITCH':'\\',
     'CURSOR_CENTER_SWITCH':'+',
     'APP_ON_OFF':'-'
 }
 
 # 移動游標後按左鍵(LM)或右鍵(RM)的設定，留空白則移動游標後不做任何動作
-MOVE_AND_CLICK_LR = ''
+ACTION_AFTER_MOVE = ''
 
 ```
 
