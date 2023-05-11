@@ -18,14 +18,16 @@
 2. 檔案下載時可能遇到的瀏覽器封鎖解決方法:
     * Google Chrome: [圖片說明](https://www.web3d.url.tw/images/d4wasd/download_d4wasd_from_chrome.png)
     * Microsoft Edge: [圖片說明](https://www.web3d.url.tw/images/d4wasd/download_d4wasd_from_edge.png)
-
 3. 下載完成將壓縮檔內容(dist資料夾)解壓縮到電腦桌面上，dist資料夾的內容為:
     * D4_WASD.exe (WASD 主程式)
     * d4_wasd_setting.txt (預設設定檔)
     * D3_wasd_setting.txt (D3用範例設定檔)
     * HOTS_wasd_setting.txt (HOTS用範例設定檔)
-
-![dist資料夾的內容](https://www.web3d.url.tw/images/d4wasd/1-2b.png)
+    * ![dist資料夾的內容](https://www.web3d.url.tw/images/d4wasd/1-2b.png)
+4. D4_WASD.exe 的 MD5 驗證碼:
+    * D4_WASD.exe (VERSION: 0.1A) MD5 驗證碼 : 41C2FC73FC8C3A74EAAB1CFA37193746
+    * 與 MD5驗證相關的資訊請至下方:"6. 參考資源" 查閱。
+    * 主程式版本有更新時 MD5 驗證碼會隨之變更，以本頁公告為準。
 
 -----
 
@@ -168,6 +170,8 @@ ARROW_KEY_MAP = {
 ### 6. 參考資源 : 
 * [keyboard 模組官方文件](https://github.com/boppreh/keyboard/blob/master/README.md)
 * [YT影片 WASD 的由來 : 第一位電競選手DENNIS FENG](https://www.youtube.com/watch?v=D7PJ7rliYZk)
+* [MD5 驗證機制為何](https://www.dgbas.gov.tw/public/data/dgbas03/bs5/expuse/106MD5%E6%AA%A2%E6%9F%A5%E6%AD%A5%E9%A9%9F.pdf)
+* [MD5 驗證軟體下載](http://getmd5checker.com/download.html)
 
 -----
 
