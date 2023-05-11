@@ -1,27 +1,27 @@
 # Diablo IV LocalPrefs.txt 修改程式
 
- ## 目錄
+## 目錄
+ 
+-----
+ 
+### Diablo IV LocalPrefs.txt 修改程式(.EXE 可執行檔) 下載點
+[https://www.web3d.url.tw/tmp/D4_Pref_Switcher.zip](https://www.web3d.url.tw/tmp/D4_Pref_Switcher.zip)
+ 
+下載完成將它解壓縮到 桌面 或 任何資料夾都可以，請注意 'need_fix_setting.txt' 與 'MY_DOCUMENT_LOCATION.txt' 要跟 主程式 'D4_Pref_Switcher.exe' 放在一起，程式執行時的相關設定就是從這個檔案讀取的。
+ 
+-----
+ 
+### Diablo IV LocalPrefs.txt 修改程式 使用說明
+
+1. 先執行一次 Diablo IV ，進到登入畫面就可以按左下角 [ 離開  ]  (這裡的用意是讓 Diablo IV 自動生成新的 LocalPrefs.txt )
+
+2. 開啟檔案總管，進到我的文件 裡面的 Diablo IV 資料夾，然後點 資料夾路徑欄位，並對它按右鍵選"複制"，然後用記事本開啟 "MY_DOCUMENT_LOCATION.txt"，將剛才複制的路徑覆蓋掉原有內容並存檔，然後關閉記事本。(如下圖所示)
+
+![img](https://www.web3d.url.tw/images/d4_pref_switcher/02.png)
  
  
- -----
  
- ### Diablo IV LocalPrefs.txt 修改程式(.EXE 可執行檔) 下載點
- [http://www.web3d.url.tw/diablo4/D4_Pref_Switcher.zip](http://www.web3d.url.tw/diablo4/D4_Pref_Switcher.zip)
- 
- 下載完成將它解壓縮到 桌面 或 任何資料夾都可以，請注意 'need_fix_setting.txt' 要跟 程式放在一起，程式執行時的相關設定就是從這個檔案讀取的。
- 
- -----
- 
- ### Diablo IV LocalPrefs.txt 修改程式 使用說明
- 1. 下載完成將它解壓縮到 桌面 或 任何資料夾都可以，若先前仍未執行過 Diablo IV 就執行 D4_Pref_Switcher.exe 會看到如下訊息:
- 
- ![img](https://i.imgur.com/O7HQof0.png)
- 
- 2. 我們先執行 Diablo IV ，進到登入畫面就可以按左下角 [ 離開  ]  (這裡的用意是讓 Diablo IV 自動生成新的 LocalPrefs.txt )
- 
- ![img ](https://i.imgur.com/0rQkYVo.png)
- 
- 3. 確定 Diablo IV 關閉後，重新執行 D4_Pref_Switcher.exe ，然後按 1 再按 Enter 會看到如下訊息:
+ 3. 執行 D4_Pref_Switcher.exe ，然後按 1 再按 Enter 會看到如下訊息:
  
  ![img](https://i.imgur.com/7YFHMDK.png)
  
