@@ -10,7 +10,8 @@ def read_need_fix_setting_to_dict(txt_src):
 
 def main():
     user_profile = os.environ['USERPROFILE']
-    d4_setting_dir = user_profile + "\\Documents\\Diablo IV\\"
+    # d4_setting_dir = user_profile + "\\Documents\\Diablo IV\\"
+    d4_setting_dir = (open('./MY_DOCUMENT_LOCATION.txt','r',encoding='utf-8').read().replace("\n",""))+"\\"
     # 先檢測 我的文件\\Diablo IV\\LocalPrefs.txt' 是否存在，若無表示還未曾開啟過 Diablo IV ，彈出訊息提示並結束程式
     if os.path.isfile(f'{d4_setting_dir}LocalPrefs.txt') != True:
         input(f'LocalPrefs.txt 不存在，\n請先執行一次Diablo IV 進到遊戲登入選單後結束遊戲，再重新執行本程式...\n按 [Enter] 離開')
