@@ -35,15 +35,15 @@
 ### 2. 執行 D4_WASD : 
 1. 雙擊 D4_WASD.exe 執行主程式，出現如下畫面表示 WASD 程式正常執行。
 
-![執行 D4_WASD](https://www.web3d.url.tw/images/d4wasd/2-1g.png)
+![執行 D4_WASD](https://www.web3d.url.tw/images/d4wasd/2-1h.png)
 
 -----
 
 ### 3. 常用快捷鍵 : 
 * 上下左右 : 控制 游標往上下左右位移一個單位(UNIT)，並點擊滑鼠左鍵或右鍵。
-* ] : 增加位移單位。
-* [ : 減少位移單位。
-* ＼ : 位移後點"左鍵或右鍵或無動作"的切換，比如預設是 LM ，按一下變成 RM ，再按一下變成 FORCE_MOVE(需設好對應到遊戲內的強制移動按鍵)，再按一下變成 無動作。
+* &gt; : 增加位移單位。
+* &lt; : 減少位移單位。
+* / : 位移後點"左鍵或右鍵或無動作"的切換，比如預設是 LM ，按一下變成 RM ，再按一下變成 FORCE_MOVE(需設好對應到遊戲內的強制移動按鍵)，再按一下變成 無動作。
 * ＝ : ㊉鎖定中心 切換游標設定 由畫面中心點 或 由游標當前位置 往上下左右位移
 * － : 暫停或啟動
 * 上列的快捷鍵都可以透過修改 設定檔 ( d4_wasd_setting.txt ) 調成你慣用的快捷鍵。
@@ -75,11 +75,11 @@ ARROW_KEY_MAP = {
 # 滑鼠左右鍵及快捷鍵的鍵盤映射(MAP)設定
 SKILL_KEY_MAP = {
     'LM':'5',
-    'RM':'space',
+    'RM':'6',
     'FORCE_MOVE':'9',
-    'UNIT_ADD':']',
-    'UNIT_SUB':'[',
-    'AAM_SWITCH':'\\',
+    'UNIT_ADD':'.',
+    'UNIT_SUB':',',
+    'AAM_SWITCH':'/',
     'CURSOR_CENTER_SWITCH':'+',
     'APP_ON_OFF':'-'
 }
@@ -129,15 +129,7 @@ ARROW_KEY_MAP = {
     ACTIVE_WIN_TITLE = "暗黑破壞神III"
     
     ...略...
-    
-    # 滑鼠左右鍵及快捷鍵的鍵盤映射(MAP)設定
-    SKILL_KEY_MAP = {
-        'LM':'5',
-        'RM':'space',
-        'FORCE_MOVE':'9',
-        ...略...
-    }
-    
+
     # 移動游標後按左鍵(LM)或右鍵(RM)的設定，留空白則移動游標後不做任何動作
     ACTION_AFTER_MOVE = 'FORCE_MOVE'
     ```
@@ -150,14 +142,6 @@ ARROW_KEY_MAP = {
     ACTIVE_WIN_TITLE = "暴雪英霸"
     
     ...略...
-    
-    # 滑鼠左右鍵及快捷鍵的鍵盤映射(MAP)設定
-    SKILL_KEY_MAP = {
-        'LM':'5',
-        'RM':'6',
-        'FORCE_MOVE':'9',
-        ...略...
-    }
 
     # 移動游標後按左鍵(LM)或右鍵(RM)的設定，留空白則移動游標後不做任何動作
     ACTION_AFTER_MOVE = 'FORCE_MOVE'
