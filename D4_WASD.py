@@ -1,9 +1,8 @@
 #########################################
-# D4_WASD                 VERSION: 0.5B #
-# UPDATE: 2023-05-19  AUTHOR: ALOHA3307 #
+# D4_WASD                 VERSION: 0.6A #
+# UPDATE: 2023-05-20  AUTHOR: ALOHA3307 #
 #########################################
-# FAST NOTE: 改用 threading 監控 按鍵輸入
-PROJECT_NAME = 'D4_WASD V0.5B'
+PROJECT_NAME = 'D4_WASD V0.6A'
 
 import keyboard
 import threading
@@ -23,33 +22,6 @@ MOUSE_LEFT_DOWN=0x0002
 MOUSE_LEFT_UP=0x0004
 MOUSE_RIGHT_DOWN=0x0008
 MOUSE_RIGHT_UP=0x0010
-
-class POINT(ctypes.Structure):
-    _fields_ = [("x", ctypes.c_ulong), ("y", ctypes.c_ulong)]
-
-def get_pos():
-    pt = POINT()
-    ctypes.windll.user32.GetCursorPos(ctypes.byref(pt))
-    return pt.x,pt.y
-
-def move_to_abs(offx=0,offy=0):
-    set_pos(offx,offy)
-    return offx,offy
-
-def set_pos(x, y):
-    ctypes.windll.user32.SetCursorPos(x, y)
-
-def click(flag,x,y,updown=1):
-    if flag=='left':
-        if updown==1:
-            ctypes.windll.user32.mouse_event(MOUSE_LEFT_DOWN, x, y, 0,0) # left down
-        else:
-            ctypes.windll.user32.mouse_event(MOUSE_LEFT_UP, x, y, 0,0) # left up
-    elif flag=='right':
-        if updown==1:
-            ctypes.windll.user32.mouse_event(MOUSE_RIGHT_DOWN, x, y, 0,0) # left down
-        else:
-            ctypes.windll.user32.mouse_event(MOUSE_RIGHT_UP, x, y, 0,0) # left up
 
 class WindowMgr:
     def __init__ (self):
@@ -108,6 +80,68 @@ class WindowMgr:
         win32gui.SetWindowLong (self._handle, win32con.GWL_EXSTYLE, win32gui.GetWindowLong (self._handle, win32con.GWL_EXSTYLE ) | win32con.WS_EX_LAYERED )
         winxpgui.SetLayeredWindowAttributes(self._handle, win32api.RGB(0,0,0), alpha_val, win32con.LWA_ALPHA)
 
+
+class POINT(ctypes.Structure):
+    _fields_ = [("x", ctypes.c_ulong), ("y", ctypes.c_ulong)]
+
+def get_pos():
+    pt = POINT()
+    ctypes.windll.user32.GetCursorPos(ctypes.byref(pt))
+    return pt.x,pt.y
+
+def move_to_abs(offx=0,offy=0):
+    set_pos(offx,offy)
+    return offx,offy
+
+def set_pos(x, y):
+    ctypes.windll.user32.SetCursorPos(x, y)
+
+def click(flag,x,y,updown=1):
+    if flag=='left':
+        if updown==1:
+            ctypes.windll.user32.mouse_event(MOUSE_LEFT_DOWN, x, y, 0,0) # left down
+        else:
+            ctypes.windll.user32.mouse_event(MOUSE_LEFT_UP, x, y, 0,0) # left up
+    elif flag=='right':
+        if updown==1:
+            ctypes.windll.user32.mouse_event(MOUSE_RIGHT_DOWN, x, y, 0,0) # left down
+        else:
+            ctypes.windll.user32.mouse_event(MOUSE_RIGHT_UP, x, y, 0,0) # left up
+
+def gent_degree_dict(divisions=360,radius=1):
+    out_dict={}
+    angle = 2 * pi / divisions
+    angles = [i*angle for i in range(divisions)]
+    oi=0
+    for a in angles:
+        out_dict[oi]=[int(radius*sin(a)),(int(radius*cos(a)))]
+        oi+=1
+    return out_dict
+
+def deg_to_xy(deg):
+    global DEG_DICT
+    xy_list=DEG_DICT[deg]
+    return xy_list[0],-xy_list[1]
+
+def detect_key_pressed():
+    global KEY_LAST, KEY_CONFIG, RUN_PROGRAM,DELAY_SECOND,SYS_KEY_PRESSED,SYS_KEY_MAP,KEY_ONOFF,edit_flag,current,KEY_ALIAS,BTN_DICT
+    KEY_LAST_CHECK = lambda x: True if keyboard.is_pressed(x) else False
+    while RUN_PROGRAM:
+        # 偵測鍵盤按鍵
+        for i in KEY_ALIAS:
+            num = BTN_DICT[i]
+            KEY_LAST[num] = KEY_LAST_CHECK(KEY_CONFIG[i])
+            if KEY_LAST[num]:
+                if KEY_CONFIG[i] in KEY_ONOFF and edit_flag==True:
+                    if KEY_CONFIG[i] not in current:
+                        current.append(KEY_CONFIG[i])
+                    else:
+                        current.remove(KEY_CONFIG[i])
+        SYS_KEY_PRESSED[0] = KEY_LAST_CHECK(SYS_KEY_MAP['SHOW_APP'])
+        SYS_KEY_PRESSED[1] = KEY_LAST_CHECK(SYS_KEY_MAP['HIDE_APP'])
+        SYS_KEY_PRESSED[2] = KEY_LAST_CHECK(SYS_KEY_MAP['EXIT_APP'])
+        time.sleep(DELAY_SECOND) # 暫停 DELAY_SECOND 秒，避免繁忙的監控
+
 if __name__ == '__main__':
     try:
         #讀入INI
@@ -124,50 +158,6 @@ if __name__ == '__main__':
         edit_flag=False
         current = []
         CURSOR_XY_HISTORY =[ [0,0,0] ]
-        def gent_degree_dict(divisions=360,radius=1):
-            out_dict={}
-            angle = 2 * pi / divisions
-            angles = [i*angle for i in range(divisions)]
-            oi=0
-            for a in angles:
-                out_dict[oi]=[int(radius*sin(a)),(int(radius*cos(a)))]
-                oi+=1
-            return out_dict
-
-        def deg_to_xy(deg):
-            global DEG_DICT
-            xy_list=DEG_DICT[deg]
-            return xy_list[0],-xy_list[1]
-
-        def detect_key_pressed():
-            global KEY_LAST, KEY_CONFIG, RUN_PROGRAM,DELAY_SECOND,SYS_KEY_PRESSED,SYS_KEY_MAP,KEY_ONOFF,edit_flag,current,KEY_ALIAS,BTN_DICT
-            while RUN_PROGRAM:
-                # 偵測鍵盤按鍵
-                KEY_LAST[0] = True if keyboard.is_pressed(KEY_CONFIG['UP']) else False
-                KEY_LAST[1] = True if keyboard.is_pressed(KEY_CONFIG['DOWN']) else False
-                KEY_LAST[2] = True if keyboard.is_pressed(KEY_CONFIG['LEFT']) else False
-                KEY_LAST[3] = True if keyboard.is_pressed(KEY_CONFIG['RIGHT']) else False
-                for i in KEY_ALIAS[4:10]:
-                    tmp_flag = BTN_DICT[i]
-                    if keyboard.is_pressed(KEY_CONFIG[i]):
-                        KEY_LAST[tmp_flag] = True
-                        if KEY_CONFIG[i] in KEY_ONOFF and edit_flag==True:
-                            if KEY_CONFIG[i] not in current:
-                                current.append(KEY_CONFIG[i])
-                            else:
-                                current.remove(KEY_CONFIG[i])
-                            time.sleep(DELAY_SECOND)
-                    else:
-                        KEY_LAST[tmp_flag] = False
-                KEY_LAST[10] = True if keyboard.is_pressed(KEY_CONFIG['LM']) else False
-                KEY_LAST[11] = True if keyboard.is_pressed(KEY_CONFIG['RM']) else False
-                KEY_LAST[12] = True if keyboard.is_pressed(KEY_CONFIG['AAM_SWITCH']) else False
-                KEY_LAST[13] = True if keyboard.is_pressed(KEY_CONFIG['APP_ON_OFF']) else False
-                KEY_LAST[14] = True if keyboard.is_pressed(KEY_CONFIG['CURSOR_FLY_ON_OFF']) else False
-                SYS_KEY_PRESSED[0] = True if keyboard.is_pressed(SYS_KEY_MAP['SHOW_APP']) else False
-                SYS_KEY_PRESSED[1] = True if keyboard.is_pressed(SYS_KEY_MAP['HIDE_APP']) else False
-                SYS_KEY_PRESSED[2] = True if keyboard.is_pressed(SYS_KEY_MAP['EXIT_APP']) else False
-                time.sleep(DELAY_SECOND) # 暫停 DELAY_SECOND 秒，避免繁忙的監控
 
         # 建立執行緒
         all_key_thread = threading.Thread(target=detect_key_pressed, name='AllKeyThread')
@@ -246,18 +236,16 @@ if __name__ == '__main__':
                         CURSOR_XY_HISTORY.append([1,CX,CY])
                     OX,OY = CX,CY
 
-                tx,ty,deg = 0,0,0
+                tx,ty,deg = 0,0,-1
                 if arrow_key_pressed_count > 0 : #按下任意方向鍵
-                    ACTOR_MOVED = True
-                    set_pos(x_center,y_center)
                     if arrow_key_pressed_count == 1:
-                        if KEY_LAST[0] and not KEY_LAST[2] and not KEY_LAST[3]:
+                        if KEY_LAST[0]:
                             deg = COORDINATE[CURRENT_COORDINATE][0]
-                        elif KEY_LAST[1] and not KEY_LAST[2] and not KEY_LAST[3]:
+                        elif KEY_LAST[1]:
                             deg = COORDINATE[CURRENT_COORDINATE][4]
-                        elif KEY_LAST[2] and not KEY_LAST[0] and not KEY_LAST[1]:
+                        elif KEY_LAST[2]:
                             deg = COORDINATE[CURRENT_COORDINATE][6]
-                        elif KEY_LAST[3] and not KEY_LAST[0] and not KEY_LAST[1]:
+                        elif KEY_LAST[3]:
                             deg = COORDINATE[CURRENT_COORDINATE][2]
                     else:
                         if KEY_LAST[0] and KEY_LAST[3]:
@@ -268,26 +256,12 @@ if __name__ == '__main__':
                             deg = COORDINATE[CURRENT_COORDINATE][7]
                         elif KEY_LAST[1] and KEY_LAST[2]:
                             deg = COORDINATE[CURRENT_COORDINATE][5]
-                    tx,ty=deg_to_xy(deg)
-                    tx+=x_center
-                    ty+=y_center
-                    move_to_abs(int(tx),int(ty))
-                    if ACTION_AFTER_MOVE == 'LM':
-                        click('left',0,0,1)
-                    elif ACTION_AFTER_MOVE == 'RM':
-                        click('right',0,0,1)
-                    elif ACTION_AFTER_MOVE == 'FORCE_MOVE':
-                        keyboard.press(KEY_CONFIG['FORCE_MOVE'])
-                    else: # ACTION_AFTER_MOVE ==""
-                        pass
-                    sleep(DELAY_SECOND)
-                    # 判斷 mouse 位置是否同 tx,ty
-                    if (tx,ty)==get_pos():
-                        #print("SAME POS")
-                        pass # do nothing
-                    else:
-                        # print("DIFF POS")
-                        # re-move-and-click-again
+                    if deg!=-1:
+                        ACTOR_MOVED = True
+                        set_pos(x_center,y_center)
+                        tx,ty=deg_to_xy(deg)
+                        tx+=x_center
+                        ty+=y_center
                         move_to_abs(int(tx),int(ty))
                         if ACTION_AFTER_MOVE == 'LM':
                             click('left',0,0,1)
@@ -298,6 +272,17 @@ if __name__ == '__main__':
                         else: # ACTION_AFTER_MOVE ==""
                             pass
                         sleep(DELAY_SECOND)
+                        # 判斷 mouse 位置是否同 tx,ty
+                        if (tx,ty)!=get_pos():
+                            if ACTION_AFTER_MOVE == 'LM':
+                                click('left',0,0,0)
+                            elif ACTION_AFTER_MOVE == 'RM':
+                                click('right',0,0,0)
+                            elif ACTION_AFTER_MOVE == 'FORCE_MOVE':
+                                keyboard.release(KEY_CONFIG['FORCE_MOVE'])
+                            else:
+                                pass
+                            sleep(DELAY_SECOND)
                 else:
                     if ACTOR_MOVED:
                         if ACTION_AFTER_MOVE == 'LM':
